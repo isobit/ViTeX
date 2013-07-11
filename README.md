@@ -14,7 +14,7 @@ Current features:
   * Automagic filetype-based commenting.
 
 Installation
-------------
+____________
 
 Copy plugin/ViTex.vim to your .vim/plugins folder. That's it!
 
@@ -25,10 +25,10 @@ Note: For maximum LaTeX-grokking, a leader of '\' is recommended.
 
   * <Leader>block
 
-#===================
-# Comment
-#===================
+===================
+ Comment
+===================
 
   * <Leader>sec
 
-#=== sec ===========
+=== sec ===========
