@@ -21,8 +21,8 @@ Copy plugin/ViTex.vim to your .vim/plugins folder. That's it!
 Usage
 -----
 
-Note: For maximum LaTeX-grokking, a leader of '\' is recommended.
-###Insert Mode Commands:
+Note: For maximum LaTeX-groking, a leader of '\' is recommended.
+####Insert Mode Commands:
 
  * \<Leader\>block
 ```
