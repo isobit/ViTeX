@@ -22,15 +22,16 @@ Usage
 -----
 
 Note: For maximum LaTeX-grokking, a leader of '\' is recommended.
+###Insert Mode Commands:
 
-  * <Leader>block
+ * \<Leader\>block
 ```
 #=============================
 # Comment
 #=============================
 ```
 
-  * <Leader>sec
+  * \<Leader\>sec
 ```
 #=== Comment ===========
 ```
