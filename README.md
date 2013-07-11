@@ -31,7 +31,7 @@ Note: For maximum LaTeX-grokking, a leader of '\' is recommended.
 #=============================
 ```
 
-  * \<Leader\>sec
+ * \<Leader\>sec
 ```
 #=== Comment ===========
 ```
