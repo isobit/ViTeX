@@ -25,12 +25,12 @@ Note: For maximum LaTeX-grokking, a leader of '\' is recommended.
 
   * <Leader>block
 ```
-=============================
- Comment
-=============================
+#=============================
+# Comment
+#=============================
 ```
 
   * <Leader>sec
 ```
-=== Comment ===========
+#=== Comment ===========
 ```
