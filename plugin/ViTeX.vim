@@ -35,8 +35,13 @@ autocmd BufWinEnter,BufNewFile  *  call ViTeXInitBuffer()
 
 "=== Helper Functions ===
 
-function s:c(line)
-    return b:c_delim_open . a:line . b:c_delim_close . "\r"
+function s:c(line, ...)
+    let out = b:c_delim_open . a:line . b:c_delim_close
+    if a:0 == 1
+        return out
+    else
+        return out . "\r"
+    end
 endfunction
 
 function s:prompt()
@@ -58,7 +63,7 @@ endfunction
 " Sec
 function! ViTeX_Sec()
     let comment = s:prompt()
-    let insert = s:c(repeat(b:sec_char,3).' '.comment.' '.repeat(b:sec_char,b:sec_width))
+    let insert = s:c(repeat(b:sec_char,3).' '.comment.' '.repeat(b:sec_char,b:sec_width), 1)
     return insert
 endfunction
 
