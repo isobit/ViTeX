@@ -6,7 +6,7 @@
 
 " Vars
 let s:prompt_msg = 'Comment: '
-let s:default_char = '='
+let s:default_char = '-'
 let s:default_box_char = s:default_char
 let s:default_sec_char = s:default_char
 let s:default_box_width = 50
@@ -27,10 +27,11 @@ function ViTeXInitBuffer()
         let b:box_width = s:default_box_width
         let b:sec_char = s:default_sec_char
         let b:sec_width = s:default_sec_width
+        setlocal formatoptions-=c formatoptions-=r formatoptions-=o
     endif
 endfunction
 
-autocmd BufWinEnter,BufNewFile  *	call ViTeXInitBuffer()
+autocmd BufWinEnter,BufNewFile  *  call ViTeXInitBuffer()
 
 "=== Helper Functions ===
 
@@ -47,7 +48,10 @@ endfunction
 " Block
 function! ViTeX_Block()
     let comment = s:prompt()
-    let insert = s:c(repeat(b:box_char,b:box_width)).s:c(' '.comment).s:c(repeat(b:box_char,b:box_width))
+    let edge_space = strlen(comment)+strlen(b:c_delim_open)+1
+    let insert =  s:c(repeat(b:box_char,b:box_width)).
+                \ s:c(' '.comment.repeat(' ',edge_space).'|').
+                \ s:c(repeat(b:box_char,b:box_width))
     return insert
 endfunction
 
