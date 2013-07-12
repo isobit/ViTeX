@@ -72,7 +72,10 @@ endfunction
 "======================================================================
 
 
-"GetFileTypeSettings, shamelessly copied from EnhancedCommentify
+"GetFileTypeSettings, shamelessly copied  and modified from EnhancedCommentify
+" Here's his license:
+
+
 "Copyright (c) 2008 Meikel Brandmeyer, Frankfurt am Main
 "All rights reserved.
 
