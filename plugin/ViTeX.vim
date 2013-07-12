@@ -48,7 +48,7 @@ endfunction
 " Block
 function! ViTeX_Block()
     let comment = s:prompt()
-    let edge_space = strlen(comment)+strlen(b:c_delim_open)+1
+    let edge_space = b:box_width - (strlen(comment)+strlen(b:c_delim_open)+1)
     let insert =  s:c(repeat(b:box_char,b:box_width)).
                 \ s:c(' '.comment.repeat(' ',edge_space).'|').
                 \ s:c(repeat(b:box_char,b:box_width))
