@@ -16,6 +16,7 @@ Current features:
 Installation
 ------------
 1) Make sure you have Pathogen installed (https://github.com/tpope/vim-pathogen)
+
 2) Copy plugin/ViTex.vim to your .vim/plugins folder. That's it!
 
 Usage
