@@ -27,7 +27,6 @@ function ViTeXInitBuffer()
         let b:box_width = s:default_box_width
         let b:sec_char = s:default_sec_char
         let b:sec_width = s:default_sec_width
-        setlocal formatoptions-=c formatoptions-=r formatoptions-=o
     endif
 endfunction
 
@@ -36,12 +35,24 @@ autocmd BufWinEnter,BufNewFile  *  call ViTeXInitBuffer()
 "=== Helper Functions ===
 
 function s:c(line, ...)
+    " Backup formatoptions to return later and disable autocommenting
+    let ops = &formatoptions
+    setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    "
+
+    " Ouput line
     let out = b:c_delim_open . a:line . b:c_delim_close
     if a:0 == 1
         return out
     else
         return out . "\r"
     end
+    "
+
+    " Return formatoptions
+    let &formatoptions = ops
+    "
+
 endfunction
 
 function s:prompt()
@@ -49,7 +60,7 @@ function s:prompt()
 endfunction
 
 "=== ViTeX Functions ==================================================
-"
+
 " Block
 function! ViTeX_Block()
     let comment = s:prompt()
